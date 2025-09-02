@@ -15,7 +15,9 @@
 ## 🗂️ Estructura sugerida
 clase02/
 ├─ README.md
+
 ├─ modulacion/
+
 │ ├─ init.py
 │ ├─ portadora.py # generar_portadora(), graficar()
 │ └─ am.py # modulacion_am(), graficar()
