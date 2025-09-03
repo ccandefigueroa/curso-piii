@@ -19,13 +19,21 @@ clase02/
 ├─ modulacion/
 
 │ ├─ init.py
+
 │ ├─ portadora.py # generar_portadora(), graficar()
+
 │ └─ am.py # modulacion_am(), graficar()
+
 ├─ ejercicios/
+
 │ ├─ ej1_am.py
+
 │ ├─ ej2_secuencias.py
+
 │ └─ ej3_muestreo_cuant.py
+
 └─ audio/
+
 └─ escala_pentatonica.py
 
 ---
@@ -44,9 +52,11 @@ python -m venv .venv
 source .venv/bin/activate
 
 pip install numpy matplotlib ipython
-📝 Ejercicio 1 — Portadora y AM
 
-Consigna: crear un módulo que grafique una portadora y otra que la module en amplitud.
+
+## 📝 Ejercicio 1 — Portadora y AM
+
+#Consigna: crear un módulo que grafique una portadora y otra que la module en amplitud.
 
 Modelo AM (DSB con portadora):
 x_AM(t) = (1 + m·cos(2π f_m t)) · A·cos(2π f_c t)
@@ -91,11 +101,13 @@ fs, dur, fc, fm, A, m = 44100, 0.01, 2000, 100, 1.0, 0.7
 t, c = generar_portadora(fc, fs, dur, A); gport(t, c, "Portadora 2 kHz")
 t, xam = modulacion_am(t, c, fm, m);      gam(t, xam, "AM (fm=100 Hz, m=0.7)")
 
-🧮 Ejercicio 2 — Manipulación de secuencias
+##🧮 Ejercicio 2 — Manipulación de secuencias
 
-Mostrar los primeros 50 valores de y = cos(n) con negativos → 0.
+#Mostrar los primeros 50 valores de y = cos(n) con negativos → 0.
 
-Graficar una senoide discreta con 12 muestras por ciclo.
+#Graficar una senoide discreta con 12 muestras por ciclo.
+
+
 
 ejercicios/ej2_secuencias.py
 
@@ -124,15 +136,16 @@ plt.title(f"Seno discreto con {M} muestras/ciclo — {ciclos} ciclos")
 plt.xlabel("k (muestras)"); plt.grid(True)
 plt.show()
 
-⏱️ Ejercicio 3 — Muestreo y cuantificación
 
-Señal continua: senoidal 1 kHz, ±5, 10 ms.
+##⏱️ Ejercicio 3 — Muestreo y cuantificación
 
-Muestrear a 50 kHz y graficar primeras 50 muestras (sin cuantificar).
+#Señal continua: senoidal 1 kHz, ±5, 10 ms.
 
-Cuantificar esas 50 a 12 bits y graficar.
+#Muestrear a 50 kHz y graficar primeras 50 muestras (sin cuantificar).
 
-Mostrar 3 gráficas (continua, muestreada, cuantificada).
+#Cuantificar esas 50 a 12 bits y graficar.
+
+#Mostrar 3 gráficas (continua, muestreada, cuantificada).
 
 ejercicios/ej3_muestreo_cuant.py
 
@@ -173,7 +186,10 @@ plt.tight_layout(); plt.show()
 
 LSB (12 bits, rango ±5): LSB = 10 / (2^12 - 1) ≈ 2.44 mV.
 
-🔊 Ejercicio 4 — Escala pentatónica menor de La
+##🔊 Ejercicio 4 — Escala pentatónica menor de La
+#Rango audible aprox. 20 Hz–20 kHz.
+
+#Ej. 4: reproducir la escala pentatónica menor de La.
 
 audio/escala_pentatonica.py
 
