@@ -50,19 +50,18 @@ python -m venv .venv
 .venv\Scripts\activate
 # Linux/macOS
 source .venv/bin/activate
-
 pip install numpy matplotlib ipython
+```
 
+## 🟢 Actividad 1 — Portadora y AM
+- **Consigna:** crear un módulo que grafique una **portadora** y otra que **module en amplitud**.
+- **Modelo:**  
+  $$x_{AM}(t)=(1+m\cos 2\pi f_m t)\,A\cos 2\pi f_c t$$
+- **Parámetros usados:** `fs=44100`, `fc=2000`, `fm=100`, `A=1.0`, `m=0.7`.
 
-## 📝 Ejercicio 1 — Portadora y AM
-
-#Consigna: crear un módulo que grafique una portadora y otra que la module en amplitud.
-
-Modelo AM (DSB con portadora):
-x_AM(t) = (1 + m·cos(2π f_m t)) · A·cos(2π f_c t)
 
 modulacion/portadora.py
-
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -100,17 +99,21 @@ from modulacion.am import modulacion_am, graficar as gam
 fs, dur, fc, fm, A, m = 44100, 0.01, 2000, 100, 1.0, 0.7
 t, c = generar_portadora(fc, fs, dur, A); gport(t, c, "Portadora 2 kHz")
 t, xam = modulacion_am(t, c, fm, m);      gam(t, xam, "AM (fm=100 Hz, m=0.7)")
+```
 
-##🧮 Ejercicio 2 — Manipulación de secuencias
 
-#Mostrar los primeros 50 valores de y = cos(n) con negativos → 0.
+## 🟢Actividad 2 — Secuencias
 
-#Graficar una senoide discreta con 12 muestras por ciclo.
+- **Consigna:**
+A) Mostrar los primeros 50 valores de y = cos(n) reemplazando con 0 los negativos.
+B) Graficar una senoide discreta con 12 muestras por ciclo.
 
+- **Parámetros usados:**
+`N=50`, `M=12`, `ciclos=3.`
 
 
 ejercicios/ej2_secuencias.py
-
+```python 
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -135,20 +138,18 @@ plt.stem(k, x, basefmt='r-')
 plt.title(f"Seno discreto con {M} muestras/ciclo — {ciclos} ciclos")
 plt.xlabel("k (muestras)"); plt.grid(True)
 plt.show()
+```
 
+## 🟢Ejercicio 3 — Muestreo y cuantificación
 
-##⏱️ Ejercicio 3 — Muestreo y cuantificación
-
+- **Consigna:** Generar una senoidal continua de 1 kHz, amplitud ±5, duración 10 ms.
+Muestrear a 50 kHz y mostrar las primeras 50 muestras.
+Cuantificar esas 50 a 12 bits (ADC) y graficar las 3 curvas juntas.
 #Señal continua: senoidal 1 kHz, ±5, 10 ms.
 
-#Muestrear a 50 kHz y graficar primeras 50 muestras (sin cuantificar).
-
-#Cuantificar esas 50 a 12 bits y graficar.
-
-#Mostrar 3 gráficas (continua, muestreada, cuantificada).
 
 ejercicios/ej3_muestreo_cuant.py
-
+```python 
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -183,16 +184,17 @@ ax[2].stem(tm50, xm50_q, basefmt='r-'); ax[2].set_title("50 muestras cuantificad
 for a in ax: a.grid(True); a.set_xlabel("tiempo [s]")
 plt.tight_layout(); plt.show()
 
-
 LSB (12 bits, rango ±5): LSB = 10 / (2^12 - 1) ≈ 2.44 mV.
+```
 
-##🔊 Ejercicio 4 — Escala pentatónica menor de La
+## 🟢🔊 Ejercicio 4 — Escala pentatónica menor de La
+
+- **Consigna:** reproducir la escala pentatónica menor de La (A, C, D, E, G, A).
 #Rango audible aprox. 20 Hz–20 kHz.
 
-#Ej. 4: reproducir la escala pentatónica menor de La.
 
 audio/escala_pentatonica.py
-
+```python
 import numpy as np
 Fs = 44100
 
@@ -210,6 +212,7 @@ audio = np.concatenate([tono(f, 0.35) for f in freqs])
 # Guardar a WAV (16 bits little-endian)
 from pathlib import Path
 Path("escala_la_pent.wav").write_bytes((audio*32767).astype("<i2").tobytes())
+```
 
 ✅ Checklist rápido
 
