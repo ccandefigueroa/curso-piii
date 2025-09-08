@@ -60,7 +60,7 @@ pip install numpy matplotlib ipython
 - **Parámetros usados:** `fs=44100`, `fc=2000`, `fm=100`, `A=1.0`, `m=0.7`.
 
 
-modulacion/portadora.py
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -76,8 +76,8 @@ def graficar(t, x, titulo):
     plt.grid(True); plt.show()
 
 
-modulacion/am.py
 
+clase02-2.py
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -112,7 +112,7 @@ B) Graficar una senoide discreta con 12 muestras por ciclo.
 `N=50`, `M=12`, `ciclos=3.`
 
 
-ejercicios/ej2_secuencias.py
+clase02-1.py
 ```python 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -148,7 +148,7 @@ Cuantificar esas 50 a 12 bits (ADC) y graficar las 3 curvas juntas.
 #Señal continua: senoidal 1 kHz, ±5, 10 ms.
 
 
-ejercicios/ej3_muestreo_cuant.py
+clase02-3.py
 ```python 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -193,7 +193,7 @@ LSB (12 bits, rango ±5): LSB = 10 / (2^12 - 1) ≈ 2.44 mV.
 #Rango audible aprox. 20 Hz–20 kHz.
 
 
-audio/escala_pentatonica.py
+clase02-4.py
 ```python
 import numpy as np
 Fs = 44100

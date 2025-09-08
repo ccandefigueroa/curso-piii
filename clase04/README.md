@@ -13,8 +13,6 @@
 
 ---
 
-## 🗂️ Estructura sugerida
-
 ## 🟢 Ejercicio 8 — Pasos
 
 1) **Señal compuesta de 3 senoidales**  
